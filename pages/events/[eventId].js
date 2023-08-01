@@ -3,6 +3,7 @@ import { getEventById } from "../../dummy-data";
 import EventSumary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
+import ErrorAlert from "../../components/ui/error-alert";
 
 const SingleEvent = () => {
   const {
@@ -13,7 +14,13 @@ const SingleEvent = () => {
   console.log(singleEvent);
 
   if (!singleEvent) {
-    return <p>No event found!</p>;
+    return (
+      <>
+        <ErrorAlert>
+          <p>No event found!</p>
+        </ErrorAlert>
+      </>
+    );
   }
   return (
     <>
