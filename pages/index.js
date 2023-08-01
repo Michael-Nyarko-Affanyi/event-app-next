@@ -1,18 +1,15 @@
 import Event from "../components/event/Event";
 import { getFeaturedEvents } from "../dummy-data";
-import classes from './event-list.module.css'
 
 function Home() {
-    const featuredEvents = getFeaturedEvents();
+  const featuredEvents = getFeaturedEvents();
   return (
-    <div>
-        {featuredEvents.map((event) => (
-            <ul className={classes.list}>
-            <Event key={event.id} event={event} />
-            </ul>
-        ))}
-    </div>
-  )
+    <ul className='list'>
+      {featuredEvents.map((event) => (
+        <Event key={event.id} event={event} />
+      ))}
+    </ul>
+  );
 }
 
-export default Home
+export default Home;
